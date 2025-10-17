@@ -7,9 +7,9 @@ function Dashboard() {
   const [audioUrl, setAudioUrl] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // Use your Colab public ngrok URL here
+  // Your backend URL (with trailing slash)
   const BACKEND_URL =
-    "https://unenthused-tari-nonornamentally.ngrok-free.dev";
+    "http://127.0.0.1:8000/generate_music/";
 
   const handleGenerate = async () => {
     if (!prompt.trim()) {
@@ -21,10 +21,10 @@ function Dashboard() {
     setAudioUrl(null);
 
     try {
-      const response = await fetch(`${BACKEND_URL}/generate-music`, {
+      const response = await fetch(BACKEND_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ mood: prompt }), // key matches backend
+        body: JSON.stringify({ mood: prompt }), // matches Pydantic model
       });
 
       if (!response.ok) {
@@ -77,7 +77,7 @@ function Dashboard() {
           <h1 className="title">AI Music Generator</h1>
           <p className="subtitle">
             Enter a mood or genre (e.g., “Calm Piano”, “Energetic Rock”) and
-            generate a 30-second AI-composed track.
+            generate an AI-composed track.
           </p>
 
           {/* Prompt Input */}
@@ -101,7 +101,7 @@ function Dashboard() {
           {/* Music Output */}
           {audioUrl && (
             <div className="audio-section">
-              <h3 className="result-title">🎵 Your Generated Music</h3>
+              <h3 className="result-title">Your Generated Music</h3>
               <audio controls src={audioUrl} className="audio-player"></audio>
 
               <a
