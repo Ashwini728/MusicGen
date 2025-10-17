@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #0a0a0f;
+  color: #fff;
+  line-height: 1.8;
+}
+
+/* Container & Dashboard content */
+.dashboard-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Content above background */
+.dashboard-content {
+  position: relative;
+  z-index: 10; /* Above LiquidEther */
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+}
+.download-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #ff006a;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  background: #e6005e;
+  box-shadow: 0 0 12px rgba(255, 0, 106, 0.6);
+}
+
+/* Music Card */
+.music-card {
+  background: rgba(9, 9, 14, 0.411);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 2rem 3rem;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 6px 25px rgba(255, 0, 106, 0.2);
+}
+
+/* Input group */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.prompt-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(30, 30, 50, 0.7);
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.prompt-input:focus {
+  border-color: #ff006a;
+  box-shadow: 0 0 8px rgba(255, 0, 106, 0.5);
+}
+
+/* Button */
+.btn-primary {
+  background: #ff006a;
+  border: none;
+  color: #fff;
+  padding: 0.8rem 1.5rem; /* reduced padding */
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  max-width: 180px; /* optional: limit width */
+  margin: 0 auto; /* center it if needed */
+}
+
+.btn-primary:hover {
+  background: #e6005e;
+  box-shadow: 0 0 12px rgba(255, 0, 106, 0.6);
+}
+
+/* Audio */
+.audio-section {
+  margin-top: 1.5rem;
+}
+
+.audio-player {
+  width: 100%;
+  outline: none;
+}

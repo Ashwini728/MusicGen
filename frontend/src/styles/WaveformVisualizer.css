@@ -1,0 +1,11 @@
+.waveform-box {
+  height: 200px;
+  background: linear-gradient(135deg, #1a1a2e, #0f0f1a);
+  border: 1px dashed rgba(255,255,255,0.2);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 0.9rem;
+}
