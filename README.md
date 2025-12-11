@@ -51,7 +51,7 @@ An intelligent **AI-powered playlist generator** that creates personalized music
 ![Home Page](home.png)
 
 ###  Playlist Generation Page
-![Playlist Page](screenshots/playlist.png)
+![Playlist Page](playlist.png)
 
 ###  Mood Selector
-![Mood Selector](screenshots/mood.png)
+![Mood Selector](generator.png)
