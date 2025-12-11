@@ -2,6 +2,10 @@
 
 An intelligent **AI-powered playlist generator** that creates personalized music playlists based on user mood, activity, and listening preferences. This project uses advanced audio embeddings and recommendation algorithms to deliver high-quality and meaningful music suggestions.
 
+##  Demo Video
+[Click here to watch the demo](demo.mp4)
+
+
 ---
 
 ## Features
