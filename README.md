@@ -1,46 +1,57 @@
-🎵 AI Music Playlist Maker
+# 🎵 AI Music Playlist Maker
 
-An intelligent AI-powered playlist generator that creates personalized music playlists based on user mood, activity, and listening preferences. This project uses advanced embeddings and recommendation algorithms to deliver high-quality and meaningful music suggestions.
+An intelligent **AI-powered playlist generator** that creates personalized music playlists based on user mood, activity, and listening preferences. This project uses advanced audio embeddings and recommendation algorithms to deliver high-quality and meaningful music suggestions.
 
-Features
-🔥 Core Features
+---
 
-Mood-based playlist generation – happy, sad, romantic, energetic, chill, etc.
+## Features
 
-Activity-based playlists – study, workout, travel, sleep, party.
+### 🔥 Core Features
+- **Mood-based playlist generation** – happy, sad, romantic, energetic, chill, etc.
+- **Activity-based playlists** – study, workout, travel, sleep, party.
+- **Smart recommendation engine** using audio embeddings + similarity search.
+- **Playlist refinement** – remove unwanted songs or regenerate sections.
+- **User history learning** – system improves over time based on preferences.
 
-Smart recommendation engine using audio embeddings + similarity search.
+---
 
-Playlist refinement – remove unwanted songs, regenerate specific sections.
+## Under the Hood (AI)
+- Extracts **YAMNet audio embeddings** from tracks.
+- Stores embeddings in **Pinecone vector database** for fast retrieval.
+- Uses **cosine similarity search** to recommend the closest songs.
+- Optional **Random Forest ranking model** to enhance playlist quality.
 
-User history learning – system improves suggestions over time.
+---
 
-Under the Hood (AI)
+##  Tech Stack
 
-Uses audio embeddings extracted from tracks.
+| Layer | Technology |
+|-------|------------|
+| **Frontend** | React |
+| **Backend** | Python (FastAPI) |
+| **AI / ML** | YAMNet embeddings, vector similarity model |
+| **Database** | Pinecone, MongoDB |
+| **Version Control** | Git + GitHub |
 
-Embeddings stored in a vector database for fast retrieval.
+---
 
-Similarity search algorithm recommends the closest matching songs.
+##  How It Works
 
-Optional overall ranking using a Random Forest / ML model.
+1. User selects **mood**, **activity**, or enters a **custom prompt**.  
+2. System converts the query into an **embedding vector**.  
+3. Vector similarity search retrieves the closest matching songs.  
+4. Playlist is generated with metadata (genre, artist, tempo).  
+5. User can save, regenerate, or fine-tune the playlist.  
 
-Tech Stack
+---
 
-Frontend :	React 
-Backend :	Python (FastAPI)
-AI / ML	YAMNet embeddings, vector similarity model
-Database :	Pinecone,MongoDB
-Version Control :	Git + GitHub
+## 📸 Screenshots
 
-How It Works
+### 🏠 Home Page
+![Home Page](screenshots/home.png)
 
-User selects mood, activity, or custom prompt.
+### 🎧 Playlist Generation Page
+![Playlist Page](screenshots/playlist.png)
 
-System converts query → embedding vector.
-
-Vector similarity search finds closest matching songs.
-
-Playlists generated with metadata (genre, artist, tempo).
-
-Playlist displayed + options to save, edit, regenerate.
+### 🎵 Mood Selector
+![Mood Selector](screenshots/mood.png)
