@@ -6,7 +6,7 @@ An intelligent **AI-powered playlist generator** that creates personalized music
 
 ## Features
 
-### 🔥 Core Features
+###  Core Features
 - **Mood-based playlist generation** – happy, sad, romantic, energetic, chill, etc.
 - **Activity-based playlists** – study, workout, travel, sleep, party.
 - **Smart recommendation engine** using audio embeddings + similarity search.
