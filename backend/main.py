@@ -28,23 +28,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Create folder if it doesn't exist
+
 os.makedirs("generated_music", exist_ok=True)
 
-# Serve generated_music folder as static files
 app.mount("/generated_music", StaticFiles(directory="generated_music"), name="generated_music")
 
-# Load the Hugging Face MusicGen model
 print("Loading MusicGen model...")
 processor = AutoProcessor.from_pretrained("facebook/musicgen-small")
 model = MusicgenForConditionalGeneration.from_pretrained("facebook/musicgen-small")
 print("Model loaded successfully!")
 
-# Pydantic model for request
 class MusicRequest(BaseModel):
     mood: str
 
-# Route to generate music from text
 @app.post("/generate_music/")
 async def generate_music(request: MusicRequest):
     try:
@@ -53,29 +49,19 @@ async def generate_music(request: MusicRequest):
         # Process input prompt
         inputs = processor(text=[prompt], padding=True, return_tensors="pt")
 
-        # Generate audio (30s)
         audio_values = model.generate(**inputs, max_new_tokens=256)
-
-        # Convert tensor to NumPy
         audio = audio_values[0, 0].cpu().numpy()
-
-        # Get sampling rate
         rate = model.config.audio_encoder.sampling_rate
-
-        # Generate unique filename
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         base_filename = f"music_{timestamp}"
         audio_filename = os.path.join("generated_music", f"{base_filename}.wav")
         prompt_filename = os.path.join("generated_music", f"{base_filename}.txt")
 
-        # Save audio file
         scipy.io.wavfile.write(audio_filename, rate, audio)
 
-        # Save prompt to text file
         with open(prompt_filename, "w", encoding="utf-8") as f:
             f.write(prompt)
 
-        # Return as streaming response
         buffer = io.BytesIO()
         scipy.io.wavfile.write(buffer, rate, audio)
         buffer.seek(0)
