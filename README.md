@@ -48,7 +48,7 @@ An intelligent **AI-powered playlist generator** that creates personalized music
 ## 📸 Screenshots
 
 ### Home Page
-![Home Page](screenshots/home.png)
+![Home Page](home.png)
 
 ###  Playlist Generation Page
 ![Playlist Page](screenshots/playlist.png)
